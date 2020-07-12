@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1588766761 source:c:\users\metr\desktop\maze\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+
