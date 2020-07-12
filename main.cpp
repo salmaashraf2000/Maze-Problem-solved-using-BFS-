@@ -13,6 +13,8 @@ pair<pair<int,int>,int> parent[N][N][4];
 int x[]={-1,0,1,0};
 int y[]={0,1,0,-1};
 
+
+/// To get the state of a square in the grid
 void GetState(int state)
 {
      if(state==0)
@@ -40,6 +42,8 @@ void GetState(int state)
 
 }
 
+
+///check if this square is valid
 bool check(int nexti,int nextj,int n,int m,int index)
 {
     if(nexti>=0 && nexti<n && nextj>=0 && nextj<m && dis[nexti][nextj][index]==oo && (grid[nexti][nextj]=='.' || grid[nexti][nextj]=='e'))
@@ -98,6 +102,7 @@ int BFS(int startX,int startY,int n,int m)
     return oo;
 }
 
+///Get the path you should walk through
 vector<string> GetPath(int state)
 {
      pair<pair<int,int>,int> p=parent[destinationX][destinationY][state];
@@ -144,6 +149,8 @@ vector<string> GetPath(int state)
     return path;
 }
 
+
+/// Print the path
 void printPath(vector<string> path)
 {
      int cnt=1,total=0;
@@ -204,57 +211,3 @@ int main()
     return 0;
 }
 
-/*
-7 6
-******
-***..*
-e....*
-*.*.**
-*....*
-*c*..*
-******
-16
-
-2 2
-e.
-.c
-no
-
-5 5
-*....
-e...c
-**..*
-*****
-*****
-no
-
-4 3
-*e*
-..*
-..*
-*c*
-3
-
-5 4
-*..*
-*..*
-c...
-...e
-**.*
-4
-
-8 8
-.......e
-*****.**
-****..**
-****.***
-***...**
-*.....**
-c.....**
-****..**
-
-3 5
-c....
-...**
-.e...
-*/
